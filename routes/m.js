@@ -18,7 +18,8 @@ router.get('/getdata',async ctx=>{
     if(res)
         ctx.body=res
     else
-        ctx.body="404"
+        ctx.body={result:404}
+    await next();
 })
 
 export {router}

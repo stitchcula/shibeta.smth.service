@@ -19,6 +19,7 @@ router.get('/signin',async ctx=>{
     })
     await ctx.redis.expire(ctx.query.uin,600)
     ctx.body="200"
+    await next();
 })
 
 router.get('/updata',async ctx=>{
@@ -31,6 +32,7 @@ router.get('/updata',async ctx=>{
         ctx.body = "200"
     }else 
         throw 403
+    await next();
 })
 
 export {router}
